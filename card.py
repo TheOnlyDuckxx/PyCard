@@ -52,3 +52,8 @@ class Card:
         """Relâche la carte et la remet à sa position initiale."""
         self.dragging = False
         self.x, self.y = self.original_x, self.original_y
+
+    #Réalise l'action de la carte
+    def action(self):
+        print("Action réalisée avec succès")
+        
