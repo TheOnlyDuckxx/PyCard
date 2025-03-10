@@ -48,10 +48,11 @@ class Card:
         if self.dragging:
             self.x, self.y = mouse_pos[0] - self.width // 2, mouse_pos[1] - self.height // 2
 
-    def stop_drag(self):
+    def stop_drag(self, onboard):
         """Relâche la carte et la remet à sa position initiale."""
         self.dragging = False
-        self.x, self.y = self.original_x, self.original_y
+        if onboard==False:
+            self.x, self.y = self.original_x, self.original_y
 
     #Réalise l'action de la carte
     def action(self):

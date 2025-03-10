@@ -10,5 +10,6 @@ class Board:
     def draw(self, screen):
         pygame.draw.rect(screen, self.color, self.rect, border_radius=10)
 
-    # def on_board(self,):
-    #     return self.rect.colliderect()
+    def on_board(self, card):
+        """Vérifie si la carte est lâchée sur le plateau."""
+        return self.rect.colliderect(pygame.Rect(card.x, card.y, card.width, card.height))

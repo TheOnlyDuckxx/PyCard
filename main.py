@@ -49,10 +49,11 @@ while running:
 
         elif event.type == pygame.MOUSEBUTTONUP:
             for card in cards:
-                if board.on_board():
-                    card.action()
+                if board.on_board(card):
+                    card.action() 
+                    card.stop_drag(True)
                 else:
-                    card.stop_drag()
+                    card.stop_drag(False)
 
         elif event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
             running = False
